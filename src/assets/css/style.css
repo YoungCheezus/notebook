@@ -1,0 +1,99 @@
+.el-row {
+    margin-bottom: 20px;
+}
+.el-col {
+    border-radius: 4px;
+}
+.bg-blue {
+    background: #9896ff;
+}
+.grid-content {
+    min-height: 110px;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+    margin: 20px 0 0 0;
+}
+
+.el menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    font-family: 'Goldman', cursive;
+    font-size: 50px;
+    padding: 15px 0 0 40px;
+    letter-spacing: 10px;
+
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;  
+  opacity: 0.96;
+}
+
+.content {
+    padding: 0 30px 0 60px;
+    max-width: 1200px;
+}
+.empty-layout {
+    background-color: grey;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 5rem;
+    height: 100vh;
+}
+
+.margin-3 {
+    margin-top: 3%;
+}
+.margin-1 {
+    margin-top: 1%;
+}
+h2 {
+    letter-spacing: 3px;
+    color: #4a5666;
+    font-family: 'Goldman', cursive;
+}
+
+.add-form {
+    max-width: 800px;
+}
+.icon-xs {
+    display: none;
+}
+.search-xs {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .el-col-xs-24 {
+        text-align: center;
+    }
+    .icon-lg {
+        display: none;
+    } 
+    .icon-xs {
+        display: inline;
+    }
+    .visible-xs {
+        display: none;
+    }
+    .search-xs {
+        display: block;
+    }
+
+}
+
