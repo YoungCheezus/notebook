@@ -4,12 +4,14 @@
     <hr />
     <div class="margin-3"></div>
     <div class="add-form">
+      <!-- create form -->
       <el-form
         :model="ruleForm"
         :rules="rules"
         ref="ruleForm"
         label-width="170px"
       >
+      <!-- create rows -->
         <el-form-item label="Name" prop="name">
           <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
@@ -30,19 +32,19 @@
           <el-input v-model="ruleForm.address.city"></el-input>
         </el-form-item>
 
-        <el-form-item label="street" prop="street">
+        <el-form-item label="Street" prop="street">
           <el-input v-model="ruleForm.address.streetC"></el-input>
         </el-form-item>
 
         <el-form-item label="Zip" prop="zipcode">
           <el-input v-model="ruleForm.address.zipcode"></el-input>
         </el-form-item>
-
+        <!-- button "send form" -->
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">
-            Добавить
+            Add contact
             <i class="el-icon-caret-right"></i>
-            </el-button>
+          </el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -66,6 +68,7 @@ export default {
       },
       contacts: [],
       rules: {
+        // form validation rules for "name"
         name: [
           {
             required: true,
@@ -78,6 +81,7 @@ export default {
             trigger: ["blur", "change"],
           },
         ],
+        // form validation rules for "phone"
         phone: [
           {
             required: true,
@@ -90,6 +94,7 @@ export default {
             trigger: ["blur", "change"],
           },
         ],
+        // form validation rules for "email"
         email: [
           {
             required: true,
@@ -106,6 +111,7 @@ export default {
     };
   },
   mounted() {
+    // get data to "contacts" from localStorage
     if (localStorage.getItem("contacts")) {
       try {
         this.contacts = JSON.parse(localStorage.getItem("contacts"));
@@ -115,11 +121,13 @@ export default {
     }
   },
   methods: {
+    // Save new contacts
     submitForm(formName) {
+      // check validation
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          // push new "contact"
           this.contacts.data.push(this.ruleForm);
-          this.newContact = "";
           this.saveContact();
           this.$message({
             message: "Contact added",
@@ -131,8 +139,9 @@ export default {
       });
     },
     saveContact() {
-        const parsed = JSON.stringify(this.contacts);
-        localStorage.setItem("contacts", parsed);
+      // Save new contact in localStorage (send "contacts" to localStorage)
+      const parsed = JSON.stringify(this.contacts);
+      localStorage.setItem("contacts", parsed);
     },
   },
 };

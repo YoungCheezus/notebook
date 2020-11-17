@@ -67,7 +67,10 @@ h2 {
     color: #4a5666;
     font-family: 'Goldman', cursive;
 }
-
+.title {
+    font-family: 'Anton', sans-serif;
+    opacity: 0.8
+}
 .add-form {
     max-width: 800px;
 }
